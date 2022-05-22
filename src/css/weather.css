@@ -4,3 +4,35 @@
     font-size: 16px;
     box-sizing: border-box;
 }
+
+body {
+    background: url(../imgs/night_sky.jpg) no-repeat center center fixed;
+
+    background-size: cover;
+}
+
+.main_container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.weather_info {
+    border: 2px solid violet;
+    border-radius: 15px;
+    width: 300px;
+    height: 300px;
+
+    margin-left: -50%;
+}
+
+.extra_info {
+    border: 2px solid violet;
+    border-radius: 15px;
+    width: 400px;
+    height: 100px;
+}
