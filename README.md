@@ -1,2 +1,3 @@
 # Weather_App
-Wheater app
+
+Weather app
