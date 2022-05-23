@@ -5,6 +5,7 @@ const DOM_el = (function () {
 
     const name = document.querySelector(".name");
     const main_info = document.querySelector(".main_info");
+    const weather_icon = document.querySelector(".icon");
     const temperature = document.querySelector(".temperature");
     const feels_like = document.querySelector(".feels_like");
     const humidity = document.querySelector(".humidity");
@@ -24,6 +25,7 @@ const DOM_el = (function () {
         extra_info,
         name,
         main_info,
+        weather_icon,
         temperature,
         feels_like,
         humidity,

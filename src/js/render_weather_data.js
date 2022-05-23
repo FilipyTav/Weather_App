@@ -21,35 +21,34 @@ const render_info = async (city, units = "metric") => {
             return;
     }
 
-    const name_el = DOM_el.name;
-    name_el.textContent = weather_data.name;
+    DOM_el.name.textContent = weather_data.name;
 
-    const main_info_el = DOM_el.main_info;
-    main_info_el.textContent = weather_data.weather[0].main;
+    DOM_el.main_info.textContent = weather_data.weather[0].main;
 
-    const temperature_el = DOM_el.temperature;
-    temperature_el.textContent = `${weather_data.main.temp} ${units_temp}`;
+    DOM_el.weather_icon.src = `https://openweathermap.org/img/wn/${weather_data.weather[0].icon}@2x.png`;
 
-    const feels_like_el = DOM_el.feels_like;
-    feels_like_el.textContent = `Feels like ${weather_data.main.feels_like} ${units_temp}`;
+    DOM_el.temperature.textContent = `${weather_data.main.temp} ${units_temp}`;
 
-    const humidity_el = DOM_el.humidity;
-    humidity_el.textContent = `Humidity: ${weather_data.main.humidity}%`;
+    DOM_el.feels_like.textContent = `Feels like ${weather_data.main.feels_like} ${units_temp}`;
 
-    const min_temp_el = DOM_el.min_temp;
-    min_temp_el.textContent = `Minimum of ${weather_data.main.temp_min} ${units_temp}`;
+    DOM_el.humidity.textContent = `Humidity: ${weather_data.main.humidity}%`;
 
-    const max_temp_el = DOM_el.max_temp;
-    max_temp_el.textContent = `Maximum of ${weather_data.main.temp_max} ${units_temp}`;
+    DOM_el.min_temp.textContent = `Minimum of ${weather_data.main.temp_min} ${units_temp}`;
 
-    const description_el = DOM_el.description;
-    description_el.textContent = weather_data.weather[0].description;
+    DOM_el.max_temp.textContent = `Maximum of ${weather_data.main.temp_max} ${units_temp}`;
 
-    const pressure_el = DOM_el.pressure;
-    pressure_el.textContent = `Pressure: ${weather_data.main.pressure} hPa`;
+    // Capitalizes the first letter of each word in a string
+    const description = weather_data.weather[0].description
+        .toLowerCase()
+        .split(" ")
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(" ");
 
-    const wind_speed_el = DOM_el.wind_speed;
-    wind_speed_el.textContent = `Wind speed: ${weather_data.wind.speed} ${units_speed}`;
+    DOM_el.description.textContent = description;
+
+    DOM_el.pressure.textContent = `Pressure: ${weather_data.main.pressure} hPa`;
+
+    DOM_el.wind_speed.textContent = `Wind speed: ${weather_data.wind.speed} ${units_speed}`;
 };
 
 export { render_info };
