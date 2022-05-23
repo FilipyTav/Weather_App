@@ -19,6 +19,10 @@ const DOM_el = (function () {
     const pressure = document.querySelector(".pressure");
     const wind_speed = document.querySelector(".wind_speed");
 
+    const time_info = document.querySelector(".time_info");
+    const sunrise = document.querySelector(".sunrise");
+    const sunset = document.querySelector(".sunset");
+
     return {
         main_container,
         weather_info,
@@ -35,6 +39,9 @@ const DOM_el = (function () {
         description,
         pressure,
         wind_speed,
+        time_info,
+        sunrise,
+        sunset,
     };
 })();
 

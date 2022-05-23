@@ -49,6 +49,13 @@ const render_info = async (city, units = "metric") => {
     DOM_el.pressure.textContent = `Pressure: ${weather_data.main.pressure} hPa`;
 
     DOM_el.wind_speed.textContent = `Wind speed: ${weather_data.wind.speed} ${units_speed}`;
+
+    const timezone = weather_data.timezone;
+    const sunrise = new Date((weather_data.sys.sunrise + timezone) * 1000);
+    const sunset = new Date((weather_data.sys.sunset + timezone) * 1000);
+
+    DOM_el.sunrise.textContent = `${sunrise.getHours()}:${sunrise.getMinutes()}`;
+    DOM_el.sunset.textContent = `${sunset.getHours()}:${sunset.getMinutes()}`;
 };
 
 export { render_info };
