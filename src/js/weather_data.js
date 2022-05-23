@@ -6,7 +6,6 @@ const Weather = (function () {
         );
 
         const weather_data = await response.json();
-        console.log(weather_data);
         return weather_data;
     };
 

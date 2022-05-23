@@ -6,6 +6,7 @@ const DOM_el = (function () {
     const name = document.querySelector(".name");
     const main_info = document.querySelector(".main_info");
     const temperature = document.querySelector(".temperature");
+    const feels_like = document.querySelector(".feels_like");
     const humidity = document.querySelector(".humidity");
     const min_max = document.querySelector(".min_max");
     const min_temp = document.querySelector(".min_temp");
@@ -24,6 +25,7 @@ const DOM_el = (function () {
         name,
         main_info,
         temperature,
+        feels_like,
         humidity,
         min_max,
         min_temp,
