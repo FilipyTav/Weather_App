@@ -4,6 +4,11 @@ import { Weather } from "./weather_data";
 const render_info = async (city, units = "metric") => {
     const weather_data = await Weather.fetch_api(city, units);
 
+    if (weather_data.cod === "404" && weather_data.message) {
+        alert(weather_data.message);
+        return;
+    }
+
     let units_temp = "°C";
     let units_speed = "m/s";
 
@@ -21,7 +26,12 @@ const render_info = async (city, units = "metric") => {
             return;
     }
 
-    DOM_el.name.textContent = weather_data.name;
+    // Get the full country name based on the country code
+    const region_names = new Intl.DisplayNames(["en"], { type: "region" });
+
+    DOM_el.name.textContent = `${weather_data.name}, ${region_names.of(
+        weather_data.sys.country
+    )}`;
 
     DOM_el.main_info.textContent = weather_data.weather[0].main;
 
@@ -54,8 +64,14 @@ const render_info = async (city, units = "metric") => {
     const sunrise = new Date((weather_data.sys.sunrise + timezone) * 1000);
     const sunset = new Date((weather_data.sys.sunset + timezone) * 1000);
 
-    DOM_el.sunrise.textContent = `${sunrise.getHours()}:${sunrise.getMinutes()}`;
-    DOM_el.sunset.textContent = `${sunset.getHours()}:${sunset.getMinutes()}`;
+    DOM_el.sunrise.textContent = `${sunrise.getHours()}:${sunrise
+        .getMinutes()
+        .toString()
+        .padStart(2, 0)}`;
+    DOM_el.sunset.textContent = `${sunset.getHours()}:${sunset
+        .getMinutes()
+        .toString()
+        .padStart(2, 0)}`;
 };
 
 export { render_info };

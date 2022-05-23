@@ -2,7 +2,6 @@ const DOM_el = (function () {
     const main_container = document.querySelector(".main_container");
 
     const weather_info = document.querySelector(".weather_info");
-
     const name = document.querySelector(".name");
     const main_info = document.querySelector(".main_info");
     const weather_icon = document.querySelector(".icon");
@@ -15,13 +14,15 @@ const DOM_el = (function () {
     const description = document.querySelector(".description");
 
     const extra_info = document.querySelector(".extra_info");
-
     const pressure = document.querySelector(".pressure");
     const wind_speed = document.querySelector(".wind_speed");
 
     const time_info = document.querySelector(".time_info");
     const sunrise = document.querySelector(".sunrise");
     const sunset = document.querySelector(".sunset");
+
+    const search_input = document.querySelector(".input_city");
+    const search_btn = document.querySelector(".search_city");
 
     return {
         main_container,
@@ -42,6 +43,8 @@ const DOM_el = (function () {
         time_info,
         sunrise,
         sunset,
+        search_btn,
+        search_input,
     };
 })();
 
