@@ -1,3 +1,4 @@
+// All the relevant DOM elements in the project
 const DOM_el = (function () {
     const main_container = document.querySelector(".main_container");
 

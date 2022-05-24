@@ -1,16 +1,20 @@
 import { DOM_el } from "./DOM_elements";
 import { Weather } from "./weather_data";
 
+// Adds the related info in its place in the DOM
 const render_info = async (city, units = "metric") => {
-    DOM_el.loading_icon.setAttribute("style", "display: blobk");
+    // While the data is being fetched, displays the loading icon
+    DOM_el.loading_icon.setAttribute("style", "display: block");
     const weather_data = await Weather.fetch_api(city, units);
     DOM_el.loading_icon.setAttribute("style", "display: none");
 
+    // If the location input is invalid
     if (weather_data.cod === "404" && weather_data.message) {
         alert(weather_data.message);
         return;
     }
 
+    // Variables that change according to the units "chosen"
     let units_temp = "°C";
     let units_speed = "m/s";
 
@@ -28,7 +32,7 @@ const render_info = async (city, units = "metric") => {
             return;
     }
 
-    // Get the full country name based on the country code
+    // Gets the full country name based on the country code
     const region_names = new Intl.DisplayNames(["en"], { type: "region" });
 
     DOM_el.name.textContent = `${weather_data.name}, ${region_names.of(
@@ -37,6 +41,7 @@ const render_info = async (city, units = "metric") => {
 
     DOM_el.main_info.textContent = weather_data.weather[0].main;
 
+    // Displays the image based on the weather data
     DOM_el.weather_icon.src = `https://openweathermap.org/img/wn/${weather_data.weather[0].icon}@2x.png`;
 
     DOM_el.temperature.textContent = `${weather_data.main.temp} ${units_temp}`;
@@ -62,7 +67,7 @@ const render_info = async (city, units = "metric") => {
 
     DOM_el.wind_speed.textContent = `Wind speed: ${weather_data.wind.speed} ${units_speed}`;
 
-    // Get the time of the sunrise and sunset on according to the timezone
+    // Get the time of the sunrise and sunset according to the timezone
     const timezone = weather_data.timezone;
     const sunrise = new Date((weather_data.sys.sunrise + timezone) * 1000);
     const sunset = new Date((weather_data.sys.sunset + timezone) * 1000);

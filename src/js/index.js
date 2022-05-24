@@ -2,6 +2,7 @@ import "../css/weather.css";
 import { DOM_el } from "./DOM_elements";
 import { render_info } from "./render_weather_data";
 
+// Initializes the site
 const init = () => {
     render_info();
 
