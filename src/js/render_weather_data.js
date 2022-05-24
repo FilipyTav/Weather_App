@@ -2,7 +2,9 @@ import { DOM_el } from "./DOM_elements";
 import { Weather } from "./weather_data";
 
 const render_info = async (city, units = "metric") => {
+    DOM_el.loading_icon.setAttribute("style", "display: blobk");
     const weather_data = await Weather.fetch_api(city, units);
+    DOM_el.loading_icon.setAttribute("style", "display: none");
 
     if (weather_data.cod === "404" && weather_data.message) {
         alert(weather_data.message);
@@ -47,7 +49,7 @@ const render_info = async (city, units = "metric") => {
 
     DOM_el.max_temp.textContent = `Maximum of ${weather_data.main.temp_max} ${units_temp}`;
 
-    // Capitalizes the first letter of each word in a string
+    // Capitalizes the first letter of each word in the description
     const description = weather_data.weather[0].description
         .toLowerCase()
         .split(" ")
@@ -60,18 +62,22 @@ const render_info = async (city, units = "metric") => {
 
     DOM_el.wind_speed.textContent = `Wind speed: ${weather_data.wind.speed} ${units_speed}`;
 
+    // Get the time of the sunrise and sunset on according to the timezone
     const timezone = weather_data.timezone;
     const sunrise = new Date((weather_data.sys.sunrise + timezone) * 1000);
     const sunset = new Date((weather_data.sys.sunset + timezone) * 1000);
 
-    DOM_el.sunrise.textContent = `${sunrise.getHours()}:${sunrise
-        .getMinutes()
+    // Shows the time of the sunrise and sunset
+    // Also guarantees both the hours and minutes have exactly 2 digits in them
+    // (Adds a 0 to the start if it's a single digit number)
+    DOM_el.sunrise.textContent = `${sunrise
+        .getHours()
         .toString()
-        .padStart(2, 0)}`;
-    DOM_el.sunset.textContent = `${sunset.getHours()}:${sunset
-        .getMinutes()
+        .padStart(2, 0)}:${sunrise.getMinutes().toString().padStart(2, 0)}`;
+    DOM_el.sunset.textContent = `${sunset
+        .getHours()
         .toString()
-        .padStart(2, 0)}`;
+        .padStart(2, 0)}:${sunset.getMinutes().toString().padStart(2, 0)}`;
 };
 
 export { render_info };

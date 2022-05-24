@@ -24,6 +24,8 @@ const DOM_el = (function () {
     const search_input = document.querySelector(".input_city");
     const search_btn = document.querySelector(".search_city");
 
+    const loading_icon = document.querySelector(".loading_icon img");
+
     return {
         main_container,
         weather_info,
@@ -45,6 +47,7 @@ const DOM_el = (function () {
         sunset,
         search_btn,
         search_input,
+        loading_icon,
     };
 })();
 

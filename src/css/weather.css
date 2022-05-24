@@ -119,6 +119,9 @@ body {
     padding: 10px 35px 10px 15px;
     border: none;
     border-radius: 100px;
+
+    box-shadow: 5px 5px 10px violet;
+    font-size: 1.2rem;
 }
 
 .search_city {
@@ -132,4 +135,23 @@ body {
 
 .search_city img {
     object-fit: cover;
+}
+
+.credits {
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.credits a {
+    color: rgb(228, 104, 228);
+}
+
+.loading_icon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
 }
