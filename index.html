@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="./main.js" defer></script>
+        <title>Weather App</title>
+    </head>
+    <body>
+        <div class="main_container">
+            <div class="weather_info">
+                <div class="name"></div>
+                <img src="#" alt="Current weather" class="icon" />
+                <div class="main_info"></div>
+                <div class="temperature"></div>
+                <div class="feels_like"></div>
+                <div class="humidity"></div>
+                <div class="description"></div>
+                <div class="min_max">
+                    <div class="min_temp"></div>
+                    <div class="max_temp"></div>
+                </div>
+            </div>
+            <div class="extra_info">
+                <div class="pressure"></div>
+                <div class="wind_speed"></div>
+            </div>
+
+            <div class="time_info">
+                <div class="sunrise_container">
+                    <div>Sunrise |&nbsp;</div>
+                    <div class="sunrise"></div>
+                </div>
+                <div class="sunset_container">
+                    <div>Sunset &nbsp;|&nbsp;</div>
+                    <div class="sunset"></div>
+                </div>
+            </div>
+
+            <div class="input">
+                <input
+                    type="text"
+                    class="input_city"
+                    placeholder="Search weather of a city"
+                />.
+                <button class="search_city">
+                    <img
+                        src="../src/imgs/search.svg"
+                        alt="search icon"
+                        srcset=""
+                    />
+                </button>
+            </div>
+
+            <div class="loading_icon">
+                <img
+                    src="../src/imgs/Half-Moon-Loading.svg"
+                    alt="loading icon"
+                />
+            </div>
+        </div>
+
+        <div class="credits">
+            Photo by
+            <a
+                href="https://unsplash.com/@actionjackson801?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                >Jackson Hendry</a
+            >
+            on
+            <a
+                href="https://unsplash.com/@actionjackson801?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                >Unsplash</a
+            >
+        </div>
+    </body>
+</html>
