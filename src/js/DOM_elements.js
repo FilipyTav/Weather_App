@@ -1,5 +1,8 @@
 // All the relevant DOM elements in the project
 const DOM_el = (function () {
+    // const all_images = document.querySelectorAll("img");
+    // all_images.forEach((image) => (image.srcset = ""));
+
     const main_container = document.querySelector(".main_container");
 
     const weather_info = document.querySelector(".weather_info");
