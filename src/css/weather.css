@@ -31,6 +31,8 @@ body {
     box-shadow: 8px 8px 10px violet;
 }
 
+/* Wheather info starts here */
+
 .weather_info {
     margin-left: -50%;
 
@@ -40,18 +42,6 @@ body {
     align-items: center;
 
     width: clamp(20%, 30%, 40%);
-}
-
-.extra_info {
-    text-align: center;
-
-    display: flex;
-    justify-content: space-between;
-    gap: 10%;
-
-    position: fixed;
-    right: 5%;
-    bottom: 5%;
 }
 
 .weather_info *,
@@ -86,6 +76,26 @@ body {
     text-align: center;
 }
 
+/* Wheather info ends here */
+
+/* Extra info starts here */
+
+.extra_info {
+    text-align: center;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+}
+
+/* Extra info ends here */
+
+/* Time info starts here */
+
 .time_info {
     position: fixed;
     right: 5%;
@@ -104,6 +114,10 @@ body {
 .sunset_container {
     display: flex;
 }
+
+/* Time info ends here */
+
+/* Input starts here */
 
 .input {
     position: fixed;
@@ -137,6 +151,10 @@ body {
     object-fit: cover;
 }
 
+/* Input ends here */
+
+/* Extras start */
+
 .credits {
     color: white;
     position: fixed;
@@ -155,3 +173,5 @@ body {
     transform: translate(-50%, -50%);
     z-index: 999;
 }
+
+/* Extras end */
