@@ -12,13 +12,13 @@ body {
 }
 
 .main_container {
-    width: 100vw;
-    height: 100vh;
-
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
     align-items: center;
+    gap: 1rem;
+
+    margin: 1.8rem 0;
 }
 
 .weather_info,
@@ -37,17 +37,25 @@ body {
     }
 }
 
+.left_bar,
+.right_bar {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+}
+
 /* Wheather info starts here */
 
 .weather_info {
-    margin-left: -50%;
+    max-width: 80vw;
 
     display: flex;
     flex-flow: column nowrap;
     gap: 15px;
     align-items: center;
-
-    width: clamp(20%, 30%, 40%);
 
     * {
         font-size: 1.5rem;
@@ -65,12 +73,13 @@ body {
     .min_max {
         display: flex;
         gap: 15%;
-    }
 
-    .min_max > * {
-        max-width: 200px;
-        min-height: 10%;
-        text-align: center;
+        * {
+            font-size: 1.2rem;
+            max-width: 200px;
+            min-height: 10%;
+            text-align: center;
+        }
     }
 }
 
@@ -85,9 +94,7 @@ body {
     justify-content: space-between;
     gap: 10%;
 
-    position: fixed;
-    right: 5%;
-    bottom: 5%;
+    max-width: 90vw;
 }
 
 /* Extra info ends here */
@@ -95,16 +102,14 @@ body {
 /* Time info starts here */
 
 .time_info {
-    position: fixed;
-    right: 5%;
-    top: 5%;
-
     display: flex;
     flex-flow: column nowrap;
     gap: 20px;
 
+    max-width: 90vw;
+
     * {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -118,11 +123,11 @@ body {
 /* Input starts here */
 
 .input {
-    position: fixed;
-    right: 15%;
-
     display: flex;
     flex-direction: row;
+
+    position: absolute;
+    top: 0;
 
     .input_city {
         outline: none;
@@ -155,9 +160,9 @@ body {
 
 .credits {
     color: white;
-    position: fixed;
-    top: 0;
-    right: 0;
+    position: relative;
+
+    text-align: right;
 
     a {
         color: rgb(228, 104, 228);
@@ -173,3 +178,51 @@ body {
 }
 
 /* Extras end */
+
+@media (min-width: 50em) {
+    .main_container {
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+
+        gap: 2rem;
+
+        margin: 10px 0;
+
+        .left_bar {
+            display: flex;
+            justify-content: center;
+        }
+
+        .right_bar {
+            display: flex;
+            align-items: stretch;
+            gap: 3rem;
+
+            margin-right: 2rem;
+        }
+    }
+
+    .weather_info {
+        gap: 1.8rem;
+    }
+
+    .time_info {
+        * {
+            font-size: 5vw;
+            flex-wrap: wrap;
+        }
+    }
+
+    .input {
+        position: relative;
+
+        order: 2;
+    }
+
+    .credits {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
