@@ -29,6 +29,12 @@ body {
     padding: 20px;
 
     box-shadow: 8px 8px 10px violet;
+
+    * {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: white;
+    }
 }
 
 /* Wheather info starts here */
@@ -42,38 +48,30 @@ body {
     align-items: center;
 
     width: clamp(20%, 30%, 40%);
-}
 
-.weather_info *,
-.extra_info *,
-.time_info * {
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: white;
-}
+    * {
+        font-size: 1.5rem;
+    }
 
-.weather_info * {
-    font-size: 1.5rem;
-}
+    .name {
+        font-size: 2rem;
+        align-self: start;
+    }
 
-.weather_info .name {
-    font-size: 2rem;
-    align-self: start;
-}
+    .icon {
+        width: 150px;
+    }
 
-.weather_info .icon {
-    width: 150px;
-}
+    .min_max {
+        display: flex;
+        gap: 15%;
+    }
 
-.weather_info .min_max {
-    display: flex;
-    gap: 15%;
-}
-
-.weather_info .min_max > * {
-    max-width: 200px;
-    min-height: 10%;
-    text-align: center;
+    .min_max > * {
+        max-width: 200px;
+        min-height: 10%;
+        text-align: center;
+    }
 }
 
 /* Wheather info ends here */
@@ -104,10 +102,10 @@ body {
     display: flex;
     flex-flow: column nowrap;
     gap: 20px;
-}
 
-.time_info * {
-    font-size: 4rem;
+    * {
+        font-size: 4rem;
+    }
 }
 
 .sunrise_container,
@@ -125,30 +123,30 @@ body {
 
     display: flex;
     flex-direction: row;
-}
 
-.input_city {
-    outline: none;
-    width: 100%;
-    padding: 10px 35px 10px 15px;
-    border: none;
-    border-radius: 100px;
+    .input_city {
+        outline: none;
+        width: 100%;
+        padding: 10px 35px 10px 15px;
+        border: none;
+        border-radius: 100px;
 
-    box-shadow: 5px 5px 10px violet;
-    font-size: 1.2rem;
-}
+        box-shadow: 5px 5px 10px violet;
+        font-size: 1.2rem;
+    }
 
-.search_city {
-    background: transparent;
-    border: none;
-    outline: none;
-    margin-left: -33px;
+    .search_city {
+        background: transparent;
+        border: none;
+        outline: none;
+        margin-left: -33px;
 
-    cursor: pointer;
-}
+        cursor: pointer;
 
-.search_city img {
-    object-fit: cover;
+        img {
+            object-fit: cover;
+        }
+    }
 }
 
 /* Input ends here */
@@ -160,10 +158,10 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-}
 
-.credits a {
-    color: rgb(228, 104, 228);
+    a {
+        color: rgb(228, 104, 228);
+    }
 }
 
 .loading_icon {

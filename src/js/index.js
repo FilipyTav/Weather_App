@@ -1,4 +1,4 @@
-import "../css/weather.css";
+import "../styles/weather.scss";
 import { DOM_el } from "./DOM_elements";
 import { render_info } from "./render_weather_data";
 
